@@ -17,6 +17,13 @@ class Phone:
     def __eq__(self, other) -> bool:
         return self.name == other.name and self.battery == other.battery
 
+    @staticmethod
+    def camera(mp):
+        if mp >= 12:
+            return f"camera {mp} MP anda bagus"
+        else:
+            return f"camera {mp} MP anda kurang bagus"
+
 
 Redmi = Phone("Redmi Note 8", "MIUI 10", "3000 mAh", "snapdragon 665")
 xiomi = Phone("Redmi Note 8", "MIUI 10", "3000 mAh", "snapdragon 665")
@@ -24,3 +31,4 @@ print(f"-1-\n{Redmi}")
 print(f"-2-\n{Redmi.lowbat(9)}")
 # Redmi.lowbat(12)
 print(Redmi == xiomi)
+print(Redmi.camera(9))
