@@ -1,0 +1,31 @@
+Berikut adalah beberapa tipe data iterable yang umum dalam bahasa pemrograman Python:
+
+1. List (Daftar)
+   - Contoh: `[1, 2, 3, 4, 5]`
+
+2. Tuple (Tupel)
+   - Contoh: `(1, 2, 3, 4, 5)`
+
+3. String (Rangkaian karakter)
+   - Contoh: `"Hello, World!"`
+
+4. Dictionary (Kamus)
+   - Contoh: `{"nama": "John", "usia": 30}`
+
+5. Set (Himpunan)
+   - Contoh: `{1, 2, 3, 4, 5}`
+
+6. Range
+   - Contoh: `range(5)` (menghasilkan 0, 1, 2, 3, 4)
+
+7. Generator
+   - Contoh: `(x for x in range(5))`
+
+8. File objects (Objek file)
+   - Contoh: File yang dibuka dengan mode baca
+
+9. Custom objects (Objek kustom) yang mengimplementasikan metode `__iter__()` atau `__getitem__()`
+
+Semua tipe data ini dapat digunakan dalam loop dan operasi iterasi lainnya di Python. Masing-masing memiliki karakteristik dan kegunaan yang berbeda dalam pemrograman.
+
+Apakah Anda ingin saya menjelaskan lebih detail tentang salah satu tipe data iterable ini?

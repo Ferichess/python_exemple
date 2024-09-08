@@ -1,0 +1,98 @@
+(0:00:00) Introduction
+(0:00:41) Apa itu Python?
+(0:01:42) Kenapa Harus Python?
+(0:03:29) Course needed
+(0:05:16) Google Colab
+(0:13:06) Instalasi di Windows
+(0:18:42) Jupyter Notebook di Windows
+(0:24:06) Variable
+(0:26:23) Apa itu Variable?
+(0:29:28) Multi Assignment Variable
+(0:30:57) Aturan Penamaan Variable
+(0:35:30) Dynamic Typing
+(0:38:04) Pro-Kontra Dynamic Typing
+(0:39:12) Memory Address
+(0:41:03) Data Types
+(0:52:09) Implicit Casting
+(0:54:38) Explicit Casting
+(0:59:18) Operator
+(0:59:55) Arithmetic Operator 
+(1:05:28) Assignment Operator
+(1:05:54) Comparison Operator 
+(1:09:00) Logical Operator 
+(1:13:52) Strings 
+(1:16:26) Slicing Strings
+(1:20:00) String Concatenation 
+(1:21:16) Escape Characters
+(1:23:29) String Methods
+(1:32:35) Print Formatting 
+(1:36:22) List 
+(1:36:46) Apa itu List? 
+(1:38:45) Access dan Modify List 
+(1:47:37) List Method 
+(1:59:10) List Comprehension 
+(2:02:37) Tuple 
+(2:02:54) Apa itu Tuple? 
+(2:03:50) Membuat Tuple
+(2:04:16) Tuple Operation 
+(2:08:18) Cara Update Tuple
+(2:11:20) Cara Melakukan Unpacking  
+(2:13:48) Tuple Methods 
+(2:15:57) Dictionaries
+(2:16:15) Apa itu Dictionary? 
+(2:16:42) Membuat Dictionary 
+(2:18:43) Perbedaan Get dengan [ ] 
+(2:21:11) Add Dictionary Item 
+(2:24:14) Delete Dictionary Item 
+(2:25:53) Dictionary Methods 
+(2:26:39) Copy Dictionary 
+(2:27:42) Nested Dictionary 
+(2:28:30) Set dan Boolean  
+(2:28:45) Apa itu Set? 
+(2:30:51) Apa itu Boolean? 
+(2:32:42) Statement  
+(2:32:46) Introduction Statement 
+(2:34:37) If, Elif, Else
+(2:40:37) Latihan If, Elif, Else 
+(2:45:33) For Loops Diagram
+(2:46:31) While Loops Diagram 
+(2:47:31) Match Case Diagram 
+(2:48:35) Break, Continue, Pass Diagram 
+(2:50:51) For Loops 
+(3:01:57) While Loops
+(3:07:08) Match Case 
+(3:08:55) Break, Continue, Pass 
+(3:15:10) Useful Operator 
+(3:27:44) Function 
+(3:27:46) Apa itu Function? 
+(3:31:14) Return Keyword
+(3:34:36) Multiple Return
+(3:39:24) Function Argument 
+(3:40:12) Default Argument 
+(3:41:43) Keyword dan Positional Arg
+(3:48:57) *args 
+(3:52:48) **kwargs 
+(3:55:06) Function Annotations 
+(3:58:34) Lambda Expression, Map, Filter 
+(4:07:52) Game Batu, Gunting, Kertas 
+(4:32:47) Error dan Exception 
+(4:35:18) Try and Except 
+(4:44:01) Try and Finally 
+(4:45:28) Files 
+(4:46:10) Membuat File 
+(4:48:00) Membaca File 
+(4:53:27) Rename File 
+(4:55:05) Delete File 
+(4:57:31) Module
+(4:57:37) Defenisi Module 
+(4:58:25) Membuat Module 
+(5:04:03) OOP 
+(5:04:08) Konsep OOP 
+(5:05:37) Object dan Class 
+(5:24:13) Method di OOP 
+(5:43:38) Inheritance 
+(5:57:38) Polymorphism 
+(6:03:23) Encapsulation dan Abstraction 
+(6:16:54) Decorator 
+(6:30:52) Generator
+(6:36:55) Additional Information and Thankyou

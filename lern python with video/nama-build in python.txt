@@ -1,0 +1,75 @@
+Tentu, saya akan memberikan daftar yang lebih lengkap dari nama-nama built-in Python. Berikut adalah daftar yang lebih komprehensif:
+
+1. Tipe Data Dasar:
+- `int`: Bilangan bulat
+- `float`: Bilangan desimal
+- `complex`: Bilangan kompleks
+- `str`: String (teks)
+- `bool`: Boolean (True/False)
+- `bytes`: Urutan byte yang tidak dapat diubah
+- `bytearray`: Urutan byte yang dapat diubah
+
+2. Struktur Data:
+- `list`: Daftar yang bisa diubah
+- `tuple`: Daftar yang tidak bisa diubah
+- `dict`: Kamus (dictionary)
+- `set`: Himpunan yang tidak berurutan dan tidak memiliki elemen duplikat
+- `frozenset`: Himpunan yang tidak dapat diubah
+
+3. Fungsi Built-in:
+- `print()`: Mencetak output
+- `len()`: Menghitung panjang objek
+- `range()`: Menghasilkan urutan angka
+- `input()`: Menerima input dari pengguna
+- `type()`: Mengembalikan tipe objek
+- `sum()`: Menjumlahkan elemen dalam iterable
+- `max()`: Mengembalikan nilai maksimum
+- `min()`: Mengembalikan nilai minimum
+- `abs()`: Mengembalikan nilai absolut
+- `round()`: Membulatkan angka
+- `sorted()`: Mengurutkan iterable
+- `reversed()`: Membalik urutan iterable
+- `enumerate()`: Mengembalikan objek enumerate
+- `zip()`: Menggabungkan iterables
+- `map()`: Menerapkan fungsi ke setiap item dalam iterable
+- `filter()`: Menyaring elemen dari iterable
+- `any()`: Mengembalikan True jika ada elemen True dalam iterable
+- `all()`: Mengembalikan True jika semua elemen True dalam iterable
+
+4. Konversi Tipe:
+- `int()`: Mengkonversi ke integer
+- `float()`: Mengkonversi ke float
+- `str()`: Mengkonversi ke string
+- `bool()`: Mengkonversi ke boolean
+- `list()`: Mengkonversi ke list
+- `tuple()`: Mengkonversi ke tuple
+- `dict()`: Mengkonversi ke dictionary
+- `set()`: Mengkonversi ke set
+
+5. Operasi File dan I/O:
+- `open()`: Membuka file
+- `read()`: Membaca dari file
+- `write()`: Menulis ke file
+- `close()`: Menutup file
+
+6. Lainnya:
+- `None`: Nilai khusus yang menyatakan ketiadaan nilai
+- `True`: Nilai boolean true
+- `False`: Nilai boolean false
+- `NotImplemented`: Nilai khusus yang digunakan dalam perbandingan
+- `Ellipsis`: Digunakan dalam slicing dan annotasi tipe
+
+7. Exceptions Built-in:
+- `Exception`: Kelas dasar untuk semua built-in exceptions
+- `ValueError`: Diangkat ketika operasi atau fungsi menerima argumen dengan tipe yang benar tetapi nilai yang tidak sesuai
+- `TypeError`: Diangkat ketika operasi atau fungsi diterapkan pada objek dengan tipe yang tidak sesuai
+- `IndexError`: Diangkat ketika indeks sequence di luar jangkauan
+- `KeyError`: Diangkat ketika kunci tidak ditemukan dalam dictionary
+
+8. Konstanta Built-in:
+- `__name__`: Nama modul saat ini
+- `__file__`: Path file dari modul saat ini
+
+Ini adalah daftar yang lebih lengkap, tetapi masih belum mencakup semua nama built-in Python. 
+Python memiliki banyak built-in lainnya yang dapat Anda temukan dalam dokumentasi resmi Python. 
+Apakah ada bagian tertentu yang ingin Anda ketahui lebih lanjut?

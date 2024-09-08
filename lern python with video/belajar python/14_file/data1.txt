@@ -1,0 +1,1 @@
+update Ini adalah contoh teks yang akan ditulis ke dalam file data.txt.
