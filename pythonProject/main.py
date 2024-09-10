@@ -123,50 +123,87 @@
 
 # print(f"\nyour total is: ${total:.2f}")
 
-questions = (
-    "how many elements are in the periodic table?: ",
-    "which animal lays the largest eggs?: ",
-    "what is the most abundant gas in earth's atmosphere?: ",
-    "how many bones are in the human body?: ",
-    "which planet in the solar system is the hottest?: ",
-)
-options = (
-    ("A. 116", "B. 117", "C. 118", "D. 119"),
-    ("A. whale", "B. crocodile", "C. elephant", "D. ostrich"),
-    ("A. nitrogen", "B. oxygen", "C. carbon-dioxide", "D. hydrogen"),
-    ("A. 206", "B. 207", "C. 208", "D. 209"),
-    ("A. mercury", "B. venus", "C. earth", "D. mars"),
-)
 
-answers = ("C", "D", "A", "A", "B")
-guesses = []
-score = 0
-question_num = 0
+# questions = (
+#     "how many elements are in the periodic table?: ",
+#     "which animal lays the largest eggs?: ",
+#     "what is the most abundant gas in earth's atmosphere?: ",
+#     "how many bones are in the human body?: ",
+#     "which planet in the solar system is the hottest?: ",
+# )
+# options = (
+#     ("A. 116", "B. 117", "C. 118", "D. 119"),
+#     ("A. whale", "B. crocodile", "C. elephant", "D. ostrich"),
+#     ("A. nitrogen", "B. oxygen", "C. carbon-dioxide", "D. hydrogen"),
+#     ("A. 206", "B. 207", "C. 208", "D. 209"),
+#     ("A. mercury", "B. venus", "C. earth", "D. mars"),
+# )
 
-for question in questions:
-    print(f"----------\n{question}")
-    #     print(f"\n{question}")
-    for option in options[question_num]:
-        print(option)
+# answers = ("C", "D", "A", "A", "B")
+# guesses = []
+# score = 0
+# question_num = 0
 
-    guess = input("enter (A, B, C, D): ").upper()
-    guesses.append(guess)
-    if guess == answers[question_num]:
-        score += 1
-        print(f"correct {score}")
-    else:
-        print(f"incorrect!!!\n {answers[question_num]} is the correct answer")
-    question_num += 1
+# for question in questions:
+#     print(f"----------\n{question}")
+#     #     print(f"\n{question}")
+#     for option in options[question_num]:
+#         print(option)
 
-print("------\nresults\n------")
-print("answers", end=" ")
-for answer in answers:
-    print(f"{answer}", end="\t")
-print("\n")
-print("guesses", end=" ")
-for guess in guesses:
-    print(f"{guess}", end="\t")
-print("\n")
+#     guess = input("enter (A, B, C, D): ").upper()
+#     guesses.append(guess)
+#     if guess == answers[question_num]:
+#         score += 1
+#         print(f"correct {score}")
+#     else:
+#         print(f"incorrect!!!\n {answers[question_num]} is the correct answer")
+#     question_num += 1
 
-score = int(score / len(questions) * 100)
-print(f"your score is: {score}%")
+# print("------\nresults\n------")
+# print("answers", end=" ")
+# for answer in answers:
+#     print(f"{answer}", end="\t")
+# print("\n")
+# print("guesses", end=" ")
+# for guess in guesses:
+#     print(f"{guess}", end="\t")
+# print("\n")
+
+# score = int(score / len(questions) * 100)
+# print(f"your score is: {score}%")
+
+# menu = {
+#     "pizza": 3.00,
+#     "nachos": 4.50,
+#     "popcorn": 6.00,
+#     "fries": 2.50,
+#     "chips": 1.00,
+#     "pretzel": 3.5,
+#     "soda": 3.00,
+#     "lemonade": 4.25,
+# }
+
+# cart = []
+# total = 0
+
+# print("----------MENU----------")
+# for key, value in menu.items():
+#     print(f"{key:10} : ${value:.2f}")
+# print("------------------------")
+
+# while True:
+#     food = input("select an item (or 'q' to quit): ").lower()
+#     if food == "q":
+#         break
+#     elif menu.get(food) is not None:
+#         cart.append(food)
+# print("----------YOUR ORDER----------")
+# for food in cart:
+#     total += menu.get(food)
+#     print(food, end=" ")
+
+# print(f"\nyour total is: ${total:.2f}")
+
+import random
+
+print(help(random))
