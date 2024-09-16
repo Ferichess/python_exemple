@@ -1,0 +1,86 @@
+ffprobe.exe : untuk mendapatkan informasi dari sebuah media file { dimensi, durasi, tipe codec}
+ffplay.exe : pemutar media yang sangat sederhana dan portable menggunakan perpustakaan ffmpeg
+            dan perpustakaan SDL. ini sebagian besar digunakan sebagai tempat pengunjaian untuk berbagai
+            API ffmpeg.
+ffmpeg.exe: file utama untuk pemrosessan media.
+
+sintak dasar: 
+ffmpeg -i input.mp4 output.mov
+ffmpeg -i input.mp4 -c copy output.mov
+ffmpeg -i input.mp4 -c:v copy -c:a copy output.mov
+
+input durasi:
+
+input dengan seleksi:
+ffmpeg -ss 00:00:05 -i input.mp4 -t 00:00:03 -c:v copy -c:a copy output.mp4
+ffmpeg -ss 5 -i input.mp4 -t 10 -c:v copy -c:a copy output.mp4
+NB: -ss point awal -t durasi
+
+input dengan perulangan X kali:
+ffmpeg -stream_loop 3 -i input.mp4 -c copy output.mp4
+NB: -stream_loop 3 = melakukan perulangan sebanyak 3 kali
+
+input dengan perulangan dengan durasi:
+ffmpeg -stream_loop -1 -i input.mp4 -t 20 -c copy output.mp4
+ffmpeg -stream_loop -1 -i input.jpg -t 20 output.mp4
+NB: -stream_loop -1 = perulangan selama durasi yang ditentukan exp 20 second
+
+replace audio / music di dalam video
+
+sintax:
+ffmpeg -i input.mp4 -i audio.mp3 -c copy -map 0:v - map 1:a output.mp4
+
+sintax replace audio dan potong durasi yang terpendek:
+ffmpeg -i input.mp4 -i audio.mp3 -c copy -map 0:v -map 1:a -shortest output.mp4
+
+sintax replace audio dan di panjangkan dan potong dengan durasi tertentu:
+ffmpeg -stream_loop -1 -i input.mp4 -stream_loop -1 -i audio.mp3 -c copy -map 0:v -map 1:a -t 20 output.mp4
+
+NB: -map 0:v = ambil video dari input index 0
+NB: -map 1:a = ambil audio dari input index 1
+
+
+membuat bingkai / border / frame:
+
+sintax:
+ffmpeg -i input.mp4 -filter_complex "pad=nW:nH:bw:bw:color, scale=oW:oH" output.mp4
+
+** Alur
+    - di risize dengan ukuran baru dengan nw(new width) dan nh(new height)
+    new width = (width + borderWidth * 2)
+    new height = (height + borderWidth * 2)
+    contoh new width : width 720 dan border 20 => 720 + (20 x 2) = 780
+    contoh new height : height 1280 dan border 20 => 1280 +  (20 x 2) = 1340
+    - memberikan border dan diberi warna color #FF0000 (RED)
+    -di resize kembali ke ukuran standart
+
+contoh:
+ffmpeg -i input.mp4 -filter_complex "pad=720:1280:20:20:red, scale=720:1280" output.mp4
+
+Menambahkan Text:
+Sintax:
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=white:fontsize=24" -t 5 output.mp4
+
+Mengatur Posisi:
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=white:fontsize=24:x=20:y=50" -t 5 output.mp4
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=white:fontsize=24:x=(w-text_w)/2:y=(h-text_h)/2" -t 5 output.mp4
+
+menambahkan box background:
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=white:fontsize=24:x=20:y=50:box=1:boxcolor=black" -t 5 output.mp4
+
+short code:
+(w-text_w) => lebar dari area text
+(h-text_h) => tinggi dari area text
+
+memperjelas text dengan box:
+
+sintax:
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=white:fontsize=64:x=20:y=50:box=1:boxcolor=warna@opacity:boxborderw=ukuranborder" -t 5 output.mp4
+
+contoh:
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=macchiato.ttf:text=sample text:fontcolor=white:fontsize=64:x=20:y=50:box=1:boxcolor=black@0.5:boxborderw=5" -t 5 output.mp4
+
+Memperjelas text dengan border
+
+Sintax:
+ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=black:fontsize=64:x=20:y=50:bordercolor=white:borderw=5" -t 5 output.mp4
