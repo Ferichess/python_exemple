@@ -1,0 +1,16 @@
+# element
+Selenium adalah alat yang dapat digunakan untuk mengotomatisasi browser web. 
+Selenium dapat digunakan untuk melakukan tugas-tugas seperti mengisi formulir, mengklik tombol, dan mengikis data dari halaman web. 
+Dalam video ini, pembicara akan membahas berbagai metode yang dapat digunakan untuk menemukan elemen pada halaman web.
+
+Metode pertama yang dibahas oleh pembicara adalah menggunakan metode find_element_by_id(). 
+Metode ini dapat digunakan untuk menemukan elemen berdasarkan atribut ID-nya. 
+Metode kedua yang dibahas oleh pembicara adalah menggunakan metode find_element_by_name(). 
+Metode ini dapat digunakan untuk mencari sebuah elemen berdasarkan atribut namanya. 
+Metode ketiga yang dibahas oleh pembicara adalah menggunakan metode find_element_by_xpath(). 
+Metode ini dapat digunakan untuk mencari sebuah elemen berdasarkan XPath-nya.
+
+find_element // mencari single element yang betujuan untuk action
+find_elements // mencari multiple element yang betujuan untuk mencari saja
+locating method // mencari dengan atribut tertentu(by id, by name, by link text,by partial link text,by tag name,by class name,by css selector,by xpath)
+Translated with DeepL.com (free version)

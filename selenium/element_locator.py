@@ -14,16 +14,10 @@ class TestSelenium(unittest.TestCase):
         self.driver.maximize_window()
 
     def test(self):
-        self.driver.get("https://www.google.com/")
-        searchbar = self.driver.find_element(by=By.NAME, value="q")
-        searchbar.send_keys("indonesia")
-        searchbar.send_keys(Keys.RETURN)
-        time.sleep(2)
-        resault = self.driver.find_element(by=By.ID, value="gsr")
-        print(resault.text, "test\n")
-        assert ("Link Footer") in resault.text
-        # self.assertIn("Google", self.driver.title)
-        # breakpoint()
+        self.driver.get("https://www.selenium.dev/")
+        searchbar = self.driver.find_element(by=By.ID, value="Layer_1")
+        print(searchbar.parent)
+        # self.driver.find_element(by=By.XPATH, value=("#APjFqb")) # ini hanya code tidak terkait dari tutorial video youtube
 
     def tearDown(self):
         self.driver.close()

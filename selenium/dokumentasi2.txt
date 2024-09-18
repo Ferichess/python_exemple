@@ -1,0 +1,26 @@
+# https://www.youtube.com/watch?v=1kOU-i4jNas&t=1830s
+ini membahas element yang  sudah ada dalam video ( berarti bukan membahas seluruhnya)
+
+elements:
+-checkbox
+-links
+-text field
+
+locators:
+-id
+-name
+-class name
+-css selector
+-xpath
+-link text
+-partial link text
+-tag name
+
+interaction:
+-text field - typing something
+-checkbox - checking the box
+-links - clicking on a link
+
+assertions:
+-verify the functionality
+-verify that there should be a button with a text "login"
