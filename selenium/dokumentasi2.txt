@@ -24,3 +24,12 @@ interaction:
 assertions:
 -verify the functionality
 -verify that there should be a button with a text "login"
+
+url yang dipakai:
+https://opensource-demo.orangehrmlive.com/
+https://the-internet.herokuapp.com/
+https://www.saucedemo.com/
+https://fs2.formsite.com/meherpavan/form2/index.html
+
+broken link : https://forum.jquery.com/using-jquery-ui/ (status code : 404)
+broken link : https://forum.jquery.com/developing-jquery-ui/ (status code : 404)

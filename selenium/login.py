@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 
 # driver.get("https://www.saucedemo.com/")
 driver.maximize_window()
