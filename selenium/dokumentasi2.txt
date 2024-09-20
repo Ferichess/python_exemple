@@ -31,6 +31,14 @@ https://the-internet.herokuapp.com/
 https://www.saucedemo.com/
 https://fs2.formsite.com/meherpavan/form2/index.html
 https://cosmocode.io/automation-practice-webtable/
+https://www.globalsqa.com/demo-site/datepicker/
+https://demo.automationtesting.in/Datepicker.html
+https://selenium-python.readthedocs.io/
+
+
 
 broken link : https://forum.jquery.com/using-jquery-ui/ (status code : 404)
 broken link : https://forum.jquery.com/developing-jquery-ui/ (status code : 404)
+
+search in google : selenium python actionChains
+search in google : https://openpyxl.readthedocs.io/
