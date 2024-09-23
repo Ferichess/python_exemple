@@ -84,3 +84,6 @@ Memperjelas text dengan border
 
 Sintax:
 ffmpeg -i input.mp4 -filter_complex "drawtext=fontfile=font.ttf:text=sample text:fontcolor=black:fontsize=64:x=20:y=50:bordercolor=white:borderw=5" -t 5 output.mp4
+
+sintax screen recorder:
+ffmpeg -f dshow -rtbufsize 100M -i video="screen-capture-recorder" -f dshow -i audio="virtual-audio-capturer" output.mkv
