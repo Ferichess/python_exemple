@@ -4,4 +4,3 @@ google.com/recaptcha/api2/demo
 https://setcookie.net
 Sent header: Set-Cookie: some_name=some_value; path=/; HttpOnly
 
-27captain.potato@gmail.com (bersihrapi)
