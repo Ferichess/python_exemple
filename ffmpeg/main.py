@@ -40,7 +40,15 @@ import os
 import subprocess
 
 
-def video_editor(input_file, output_file):
+def video_editor(
+    input_file,
+    # input2_file,
+    # input3_file,
+    # input4_file,
+    # input5_file,
+    # input6_file,
+    output_file,
+):
     # command = f"ffmpeg -i {input_file} -vf scale=-1:1000 -r 15 {output_file}"
     # command = f"ffmpeg -i {input_file} -ss 00:00:04 -t 00:00:01 -crf 5 {output_file}"
     # command = f"ffmpeg -i {input_file} -filter_complex scale=640:-1:flags=lanczos -crf 5 {output_file}"
@@ -55,7 +63,8 @@ def video_editor(input_file, output_file):
     #     f"ffmpeg -i {input_file} -c:a aac -b:a 128k -c:v libx264 -crf 23 {output_file}"
     # )
     # command = f"ffmpeg -i {input_file} -codec copy {output_file}"
-    command = f"ffmpeg -i {input_file} -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -threads 8 {output_file}"
+    # command = f"ffmpeg -i {input_file} -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -threads 8 {output_file}"
+    command = f'ffmpeg -i {input_file} -filter_complex "pad=720:1280:20:20:red, scale=720:1280" {output_file}'
 
     subprocess.run(command, shell=True)
 
@@ -64,6 +73,8 @@ def video_editor(input_file, output_file):
 # video_editor(os.path.join(os.getcwd(), "CR.mp4"), "pic.gif") # sedangkan ini tidak berfungsi
 # video_editor(os.path.abspath("CR.mp4"), "pic.gif")
 video_editor(
-    os.path.join("C:/feri/result_ffmpeg", "CR.mp4"),
-    os.path.join("C:/feri/result_ffmpeg", "movie.webm"),
+    # os.path.join("C:/feri/result_ffmpeg", "CR.mp4"),
+    # os.path.join("C:/feri/result_ffmpeg", "movie.webm"),
+    os.path.join("C:/feri/result_ffmpeg", "masking.mp4"),
+    os.path.join("C:/feri/result_ffmpeg", "grid2.mp4"),
 )
