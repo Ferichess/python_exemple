@@ -94,3 +94,17 @@ ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex vstack=inputs=2 output.mp4 //
 ffmpeg -i input0.mp4 -i input1.mp4 -filter_complex hstack=inputs=2:shortest=1 output.mp4 // Stacking Videos of Different Lengths
 ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -filter_complex "[0:v][1:v]hstack=inputs=2[top]; [2:v][3:v]hstack=inputs=2[bottom]; [top][bottom]vstack=inputs=2[v]" -map "[v]" output.mp4 // 2×2 Grid of Videos
 ffmpeg -i input0.mp4 -i input1.mp4 -i input2.mp4 -i input3.mp4 -i input4.mp4 -i input5.mp4 -filter_complex "[0:v][1:v][2:v]hstack=inputs=3[top]; [3:v][4:v][5:v]hstack=inputs=3[bottom]; [top][bottom]vstack=inputs=2[v]" -map "[v]" output.mp4 // 3×2 Grid of Videos
+
+sintak overlay video:
+ffmpeg -i input0.mp4 -i input1.png -filter_complex "overlay=W-w-10:H-h-10" -codec:a copy output.mp4
+ffmpeg -i input0.mp4 -i input1.png -filter_complex "overlay" -codec:a copy output.mp4
+ffmpeg -i input0.mp4 -i input1.png -filter_complex "[1] scale =1080:1920, format=yuva444p[in2]; [0] [in2] overlay" -codec:a copy output.mp4
+ffmpeg -i input0.mp4 -i input1.png -filter_complex "[1]scale=540:960,format=rgba[twibbon];[0][twibbon]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" -codec:a copy output.mp4
+ffmpeg -i input0.mp4 -i input1.png -filter_complex "[1]scale=540:960,format=rgba[twibbon];[0][twibbon]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2" -codec:a copy output.mp4
+
+ffmpeg -i video.mp4 -i overlay.png -i like_comment.gif -filter_complex "[1] scale=1080:1920 [twibbon];[2] scale=300:100 [gif];[0] format=rgba, scale=720:1280, pad=1080:1920:(1080-720)/2:(1920-1280)/2, drawbox=x=0:y=0:w=720:h=1280:color=black@0.5 [bg];
+[bg][gif] overlay=10:(H-h-10) [withgif];
+[withgif][twibbon] overlay=x=0:y=0, drawtext=fontfile=/path/to/font.ttf:text='text my chanel':fontcolor=white:fontsize=50:x=(w-text_w)/2:y=50
+" -c:v libx264 -c:a copy output.mp4
+
+ffmpeg -i "video.mp4" -i "input1.png" -i "input2.gif" -filter_complex "[1] scale=1080:1920 [twibbon];[2] scale=300:100 [gif];[twibbon][gif] overlay=(main_w-overlay_w)/2:(main_h-overlay_h-50) [overlay_with_gif];[0] format=rgba, scale=540:960, pad=1080:1920:(1080-540)/2:(1920-960)/2, drawbox=x=0:y=0 [bg];[bg][overlay_with_gif] overlay=0:0, drawtext=fontfile=/path/to/font.ttf:text="text_my_chanel":fontcolor=white:fontsize=50:x=(w-text_w)/2:y=50" -c:v libx264 -c:a copy {output_file}"
