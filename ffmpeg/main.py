@@ -42,8 +42,8 @@ import subprocess
 
 def video_editor(
     input_file,
-    input2_file,
-    input3_file,
+    # input2_file,
+    # input3_file,
     # input4_file,
     # input5_file,
     # input6_file,
@@ -64,7 +64,9 @@ def video_editor(
     # )
     # command = f"ffmpeg -i {input_file} -codec copy {output_file}"
     # command = f"ffmpeg -i {input_file} -c:v libvpx-vp9 -crf 30 -b:v 0 -c:a libopus -vbr on -threads 8 {output_file}"
-    command = f'ffmpeg -i "{input_file}" -i "{input2_file}" -i "{input3_file}" -filter_complex "[1] scale=1080:1920 [twibbon];[2] scale=300:100 [gif];[twibbon][gif] overlay=(main_w-overlay_w)/2:(main_h-overlay_h-50) [overlay_with_gif];[0] format=rgba, scale=540:960, pad=1080:1920:(1080-540)/2:(1920-960)/2, drawbox=x=0:y=0 [bg];[bg][overlay_with_gif] overlay=0:0, drawtext=fontfile=/path/to/font.ttf:text="text_my_chanel":fontcolor=white:fontsize=50:x=(w-text_w)/2:y=50" -c:v libx264 -c:a copy {output_file}"'
+    # command = f'ffmpeg -i "{input_file}" -i "{input2_file}" -i "{input3_file}" -filter_complex "[1] scale=1080:1920 [twibbon];[2] scale=300:100 [gif];[twibbon][gif] overlay=(main_w-overlay_w)/2:(main_h-overlay_h-50) [overlay_with_gif];[0] format=rgba, scale=540:960, pad=1080:1920:(1080-540)/2:(1920-960)/2, drawbox=x=0:y=0 [bg];[bg][overlay_with_gif] overlay=0:0, drawtext=fontfile=/path/to/font.ttf:text="text_my_chanel":fontcolor=white:fontsize=50:x=(w-text_w)/2:y=50" -c:v libx264 -c:a copy {output_file}"'
+    # command = f"ffmpeg -i {input_file} -vf scale=1080:1920 -c:v libx264 -c:a copy {output_file}"
+    command = f"ffmpeg -i {input_file}  -filter_complex [0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a] -map [v] -map [a] {output_file}"
 
     subprocess.run(command, shell=True)
 
@@ -75,8 +77,8 @@ def video_editor(
 video_editor(
     # os.path.join("C:/feri/result_ffmpeg", "CR.mp4"),
     # os.path.join("C:/feri/result_ffmpeg", "movie.webm"),
-    os.path.join("C:/feri/result_ffmpeg", "masking.mp4"),
-    os.path.join("C:/feri/result_ffmpeg", "overlay.png"),
-    os.path.join("C:/feri/result_ffmpeg", "click.gif"),
-    os.path.join("C:/feri/result_ffmpeg", "grid2.mp4"),
+    os.path.join("C:/feri/result_ffmpeg", "resize.mp4"),
+    # os.path.join("C:/feri/result_ffmpeg", "overlay.png"),
+    # os.path.join("C:/feri/result_ffmpeg", "click.gif"),
+    os.path.join("C:/feri/result_ffmpeg", "grid3.mp4"),
 )

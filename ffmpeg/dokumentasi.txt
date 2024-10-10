@@ -108,3 +108,14 @@ ffmpeg -i video.mp4 -i overlay.png -i like_comment.gif -filter_complex "[1] scal
 " -c:v libx264 -c:a copy output.mp4
 
 ffmpeg -i "video.mp4" -i "input1.png" -i "input2.gif" -filter_complex "[1] scale=1080:1920 [twibbon];[2] scale=300:100 [gif];[twibbon][gif] overlay=(main_w-overlay_w)/2:(main_h-overlay_h-50) [overlay_with_gif];[0] format=rgba, scale=540:960, pad=1080:1920:(1080-540)/2:(1920-960)/2, drawbox=x=0:y=0 [bg];[bg][overlay_with_gif] overlay=0:0, drawtext=fontfile=/path/to/font.ttf:text="text_my_chanel":fontcolor=white:fontsize=50:x=(w-text_w)/2:y=50" -c:v libx264 -c:a copy {output_file}"
+
+sintak risize video or upsize video:
+ffmpeg -i input0.mp4 -vf scale=540:960 -c:v libx264 -c:a copy output.mp4 // resize scale video
+ffmpeg -i input0.mp4 -vf scale=1080:1920 -c:v libx264 -c:a copy output.mp4 // upsize scale video
+
+sintak slowmotion or slowdown or speedup video:
+ffmpeg -i input0.mp4 -vf setpts=2.0*PTS output.mp4 // slowdown video to 2 seconds, 2.5 second, 4.0 second, etc
+ffmpeg -i input0.mp4 -vf setpts=0.5*PTS output.mp4 // speedup video to 0.5 seconds, 0.25 second, etc
+ffmpeg -i input0.mp4  -vf minterpolate='mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120 output.mp4 // How to make slow motion video using optical flow method
+ffmpeg -i input0.mp4  -filter_complex [0:v]setpts=2.0*PTS[v];[0:a]atempo=0.5[a] -map [v] -map [a] output.mp4 // How to make slow motion video using audio and video
+ffmpeg -i input0.mp4  -filter_complex [0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a] -map [v] -map [a] output.mp4 // how to make speedup video using audio and video
